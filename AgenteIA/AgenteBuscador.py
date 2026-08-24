@@ -43,8 +43,9 @@ class AgenteBuscador(Agente):
     def generar_hijos(self, e):
         hijos = []
         for fun in self.__funcion_sucesor:
-            h = fun(e)
-            hijos.append(h)
+            nuevos_hijos = fun(e)
+            for hijo in nuevos_hijos:
+                hijos.append(hijo)
         return hijos
 
     def mide_tiempo(funcion):
